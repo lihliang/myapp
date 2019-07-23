@@ -10,7 +10,9 @@
             [myapp.utils.response :as res]
             [clojure.tools.logging :as log]
             [buddy.core.hash :as hash]
-            [buddy.core.codecs :refer :all])
+            [buddy.core.codecs :refer :all]
+            [clojure.java.io :as io]
+            [buddy.core.mac :as mac])
   (:gen-class))
 
 (s/defschema Response
@@ -56,20 +58,52 @@
               (res/failResponse {:errmsg "password is not right"
                                  :errcode  52100}))))))))
 
+(def buddytest1
+  (-> (hash/sha256 "foo bar")
+      (bytes->hex)))
+
+(def buddytest2
+  (-> (hash/sha256 (io/input-stream "README.md"))
+      (bytes->hex)))
+
+(def buddytest3
+  (-> (mac/hash (io/input-stream "README.md") {:key "fish & cat" :alg :hmac+sha256})
+      (bytes->hex)))
+
+(def verify3
+  (mac/verify (io/input-stream "README.md") (hex->bytes "36d9b5d05649aa65d1a68933c50d9152e335a9ed89fe21bb0f0494f5974b4b7d")
+     {:key "fish & cat" :alg :hmac+sha256}))
+
+(def buddyt1
+  (GET "/buddyt1" []
+    (ok {:message (str buddytest1)} )))
+
+(def buddyt2
+  (GET "/buddyt2" []
+    (ok {:message (str buddytest2)} )))
+
+(def buddyt3
+  (GET "/buddyt3" []
+    (ok {:message (str buddytest3)} )))
+
+(def verifyt3
+  (GET "/verifyt3" []
+    (ok {:message verify3} )))
+
 (def app
   (api
     {
      :swagger
-     {:ui "/"
+     {:ui   "/"
       :spec "/swagger.json"
       :data {
              :info {
-                    :title "My APP to Cat&Fish forever"
+                    :title       "My APP to Cat&Fish forever"
                     :description "A real heart to fish"
                     }
-             :tags [{:name "cat"  :description "handsome cat"}
-                    { :name "fish" :description "beautiful fish"}]}}}
-
+             :tags [{:name "cat" :description "handsome cat"}
+                    {:name "fish" :description "beautiful fish"}
+                    {:name "buddy" :description "Buddy test"}]}}}
     (context "/api" []
              :tags ["cat"]
              (GET "/hello" []
@@ -97,4 +131,11 @@
                   :query-params [id :- s/Int
                                  username :- String
                                  pwd :- String]
-                  (ok (login id username pwd))))))
+                  (ok (login id username pwd))))
+    (context "/buddy" []
+      :tags ["buddy"]
+      buddyt1
+      buddyt2
+      buddyt3
+      verifyt3)
+    ))
