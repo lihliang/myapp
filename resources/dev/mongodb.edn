@@ -1,0 +1,9 @@
+{
+:host-address "127.0.0.1"
+:port 27017
+:options {:threads-allowed-to-block-for-connection-multiplier 300}
+:db "users"
+:coll_users "users"
+:coll_orders "orders"
+:coll_products "products"
+}

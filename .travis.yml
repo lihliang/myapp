@@ -1,0 +1,17 @@
+language: clojure
+sudo: required
+lein: lein
+dist: xenial
+before_script:
+  # Give MongoDB server some time to boot
+  - sleep 15
+  - mongod --version
+  - ./bin/ci/before_script.sh
+script: lein do clean, javac, test
+jdk:
+  - openjdk8
+services:
+  - mongodb
+after_success:
+  - lein cloverage --codecov
+  - bash <(curl -s https://codecov.io/bash)

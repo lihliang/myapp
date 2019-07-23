@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+    <Properties>
+        <Property name="PID">%pid</Property>
+        <Property name="LOG_EXCEPTION_CONVERSION_WORD">%ex</Property>
+        <Property name="LOG_LEVEL_PATTERN">%5p</Property>
+        <Property name="LOG_THREAD_PATTERN">[%15.15t]</Property>
+        <Property name="LOG_CLASS_PATTERN">%-20.20c{1.}</Property>
+        <Property name="LOG_DATEFORMAT_PATTERN">HH:mm:ss.SSS yyyy-MM-dd </Property>
+        <Property name="CONSOLE_LOG_PATTERN">%d{${LOG_DATEFORMAT_PATTERN}} %highlight{${LOG_LEVEL_PATTERN}}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=green, DEBUG=green bold, TRACE=blue} %style{${sys:PID}}{magenta} --- ${LOG_THREAD_PATTERN} %style{${LOG_CLASS_PATTERN}}{cyan} : %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+        <Property name="FILE_LOG_PATTERN">%d{${LOG_DATEFORMAT_PATTERN}} ${LOG_LEVEL_PATTERN} ${sys:PID} --- ${LOG_THREAD_PATTERN} ${LOG_CLASS_PATTERN} : %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+        <Property name="BASE_DIR">logs</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${sys:CONSOLE_LOG_PATTERN}" disableAnsi="false" />
+        </Console>
+        <!-- normal log -->
+        <RollingFile name="File" fileName="${BASE_DIR}/myapp.log" filePattern="${BASE_DIR}/$${date:yyyy-MM}/myapp-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>${sys:FILE_LOG_PATTERN}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+            <!-- delete policies -->
+            <DefaultRolloverStrategy max="100">
+                <Delete basePath="${BASE_DIR}" maxDepth="2">
+                    <IfFileName glob="*/myapp-*.log.gz" />
+                    <IfLastModified age="1d" />
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+        <!-- warn & error -->
+        <RollingFile name="criticalFile" fileName="${BASE_DIR}/myapp-critical.log" filePattern="${BASE_DIR}/$${date:yyyy-MM}/myapp-critical-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <Pattern>${sys:FILE_LOG_PATTERN}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+            <!-- delete policies -->
+            <DefaultRolloverStrategy max="100">
+                <Delete basePath="${BASE_DIR}" maxDepth="2">
+                    <IfFileName glob="*/myapp-critical-*.log" />
+                    <IfLastModified age="28d" />
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <!-- 可以针对单个 logger 进行配置 -->
+        <Logger name="org.mongodb" level="info" />
+        <Logger name="myapp-server.api.promoter" level="debug" />
+
+        <Root level="info">
+            <!-- log 到 console-->
+            <AppenderRef ref="Console" />
+            <!-- log 到 file -->
+            <AppenderRef ref="File" />
+            <AppenderRef ref="criticalFile" level="warn" />
+        </Root>
+    </Loggers>
+</Configuration>
