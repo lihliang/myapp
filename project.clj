@@ -18,7 +18,8 @@
                  [org.apache.logging.log4j/log4j-slf4j-impl "2.11.2"]
                  [ring/ring-defaults "0.3.2"]
                  [ring/ring-codec "1.1.2"]
-                 [com.novemberain/monger "3.1.0"]]
+                 [com.novemberain/monger "3.1.0"]
+                 [liberator "0.15.3"]]
   :plugins [[lein-ring "0.12.5"]
             [lein-cloverage "1.1.1"]]
 
