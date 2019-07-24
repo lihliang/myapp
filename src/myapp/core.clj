@@ -9,7 +9,10 @@
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
             [ring.middleware.reload :refer [wrap-reload]]
             [schema.core :as s]
-            [liberator.core :refer [defresource]])
+            [liberator.core :refer [defresource]]
+            [ring.util.response :refer [response]]
+            [buddy.auth.middleware :refer [wrap-authentication]]
+            [buddy.auth :refer [authenticated? throw-unauthorized]])
   (:gen-class))
 
 (s/defschema Response
@@ -55,7 +58,11 @@
   (ANY ["/collection/:id{[0-9]+}"] [id] (entry-resource id))
   (ANY "/collection" [] list-resource))
 
-
+(defn buddyhandler
+  [request]
+  (if (:identity request)
+    (response (format "Hello %s" (:identity request)))
+    (response (str (:identity request)  "Hello Anonymous") )))
 
 (def buddyt1
   (GET "/buddyt1" []
@@ -73,7 +80,10 @@
   (GET "/verifyt3" []
     (ok {:message buddyt/verify3} )))
 
-(def app
+(def app (-> buddyhandler
+             (wrap-authentication buddyt/backend)))
+
+(def app1
   (api
     {
      :swagger
