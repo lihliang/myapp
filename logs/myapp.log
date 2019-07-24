@@ -1,117 +1,23 @@
-17:53:37.956 2019-07-23  INFO 7361 --- [           main] o.e.j.u.log          : Logging initialized @22611ms to org.eclipse.jetty.util.log.Slf4jLog
-17:53:51.211 2019-07-23  INFO 7361 --- [           main] o.m.d.cluster        : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-17:53:51.258 2019-07-23  INFO 7361 --- [127.0.0.1:27017] o.m.d.cluster        : Exception in monitor thread while connecting to server 127.0.0.1:27017
-com.mongodb.MongoSocketOpenException: Exception opening socket
-	at com.mongodb.connection.SocketStream.open(SocketStream.java:63)
-	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:115)
-	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:116)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:589)
-	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:50)
-	at com.mongodb.connection.SocketStream.open(SocketStream.java:58)
-	... 3 more
-17:53:51.907 2019-07-23  INFO 7361 --- [           main] o.e.j.s.Server       : jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_211-b12
-17:53:51.978 2019-07-23  INFO 7361 --- [           main] .s.AbstractConnector : Started ServerConnector@59065952{HTTP/1.1,[http/1.1]}{0.0.0.0:3000}
-17:53:51.979 2019-07-23  INFO 7361 --- [           main] o.e.j.s.Server       : Started @36635ms
-17:55:19.405 2019-07-23  INFO 7535 --- [           main] o.e.j.u.log          : Logging initialized @21730ms to org.eclipse.jetty.util.log.Slf4jLog
-17:55:31.664 2019-07-23  INFO 7535 --- [           main] o.m.d.cluster        : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-17:55:31.739 2019-07-23  INFO 7535 --- [127.0.0.1:27017] o.m.d.connection     : Opened connection [connectionId{localValue:1, serverValue:1}] to 127.0.0.1:27017
-17:55:31.742 2019-07-23  INFO 7535 --- [127.0.0.1:27017] o.m.d.cluster        : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=986734}
-17:55:32.370 2019-07-23  INFO 7535 --- [           main] o.e.j.s.Server       : jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_211-b12
-17:55:32.410 2019-07-23  INFO 7535 --- [           main] .s.AbstractConnector : Started ServerConnector@607df2a0{HTTP/1.1,[http/1.1]}{0.0.0.0:3000}
-17:55:32.411 2019-07-23  INFO 7535 --- [           main] o.e.j.s.Server       : Started @34738ms
-18:01:56.487 2019-07-23  INFO 8120 --- [           main] o.e.j.u.log          : Logging initialized @21708ms to org.eclipse.jetty.util.log.Slf4jLog
-18:02:12.994 2019-07-23  INFO 8120 --- [           main] o.m.d.cluster        : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-18:02:13.059 2019-07-23  INFO 8120 --- [127.0.0.1:27017] o.m.d.connection     : Opened connection [connectionId{localValue:1, serverValue:2}] to 127.0.0.1:27017
-18:02:13.062 2019-07-23  INFO 8120 --- [127.0.0.1:27017] o.m.d.cluster        : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=635710}
-18:02:13.612 2019-07-23  INFO 8120 --- [           main] o.e.j.s.Server       : jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_211-b12
-18:02:13.682 2019-07-23  INFO 8120 --- [           main] .s.AbstractConnector : Started ServerConnector@1fe3624e{HTTP/1.1,[http/1.1]}{0.0.0.0:3000}
-18:02:13.684 2019-07-23  INFO 8120 --- [           main] o.e.j.s.Server       : Started @38906ms
-18:03:18.319 2019-07-23  INFO 8147 --- [           main] o.e.j.u.log          : Logging initialized @21786ms to org.eclipse.jetty.util.log.Slf4jLog
-18:03:30.712 2019-07-23  INFO 8147 --- [           main] o.m.d.cluster        : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-18:03:30.786 2019-07-23  INFO 8147 --- [127.0.0.1:27017] o.m.d.connection     : Opened connection [connectionId{localValue:1, serverValue:3}] to 127.0.0.1:27017
-18:03:30.793 2019-07-23  INFO 8147 --- [127.0.0.1:27017] o.m.d.cluster        : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=4772859}
-18:03:31.359 2019-07-23  INFO 8147 --- [           main] o.e.j.s.Server       : jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_211-b12
-18:03:31.404 2019-07-23  INFO 8147 --- [           main] .s.AbstractConnector : Started ServerConnector@607df2a0{HTTP/1.1,[http/1.1]}{0.0.0.0:3000}
-18:03:31.408 2019-07-23  INFO 8147 --- [           main] o.e.j.s.Server       : Started @34876ms
-18:04:32.150 2019-07-23  INFO 8180 --- [           main] o.e.j.u.log          : Logging initialized @22428ms to org.eclipse.jetty.util.log.Slf4jLog
-18:04:44.345 2019-07-23  INFO 8180 --- [           main] o.m.d.cluster        : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-18:04:44.406 2019-07-23  INFO 8180 --- [127.0.0.1:27017] o.m.d.connection     : Opened connection [connectionId{localValue:1, serverValue:4}] to 127.0.0.1:27017
-18:04:44.409 2019-07-23  INFO 8180 --- [127.0.0.1:27017] o.m.d.cluster        : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=1022701}
-18:04:44.935 2019-07-23  INFO 8180 --- [           main] o.e.j.s.Server       : jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_211-b12
-18:04:44.974 2019-07-23  INFO 8180 --- [           main] .s.AbstractConnector : Started ServerConnector@607df2a0{HTTP/1.1,[http/1.1]}{0.0.0.0:3000}
-18:04:44.975 2019-07-23  INFO 8180 --- [           main] o.e.j.s.Server       : Started @35255ms
-18:05:40.695 2019-07-23  INFO 8218 --- [           main] o.e.j.u.log          : Logging initialized @21708ms to org.eclipse.jetty.util.log.Slf4jLog
-18:05:53.099 2019-07-23  INFO 8218 --- [           main] o.m.d.cluster        : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-18:05:53.167 2019-07-23  INFO 8218 --- [127.0.0.1:27017] o.m.d.connection     : Opened connection [connectionId{localValue:1, serverValue:5}] to 127.0.0.1:27017
-18:05:53.170 2019-07-23  INFO 8218 --- [127.0.0.1:27017] o.m.d.cluster        : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=612608}
-18:05:53.705 2019-07-23  INFO 8218 --- [           main] o.e.j.s.Server       : jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_211-b12
-18:05:53.737 2019-07-23  INFO 8218 --- [           main] .s.AbstractConnector : Stopped ServerConnector@6b89b36d{HTTP/1.1,[http/1.1]}{0.0.0.0:3000}
-18:05:53.738 2019-07-23  INFO 8218 --- [           main] o.e.j.s.Server       : jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_211-b12
-18:05:53.753 2019-07-23  INFO 8218 --- [           main] .s.AbstractConnector : Started ServerConnector@3b181488{HTTP/1.1,[http/1.1]}{0.0.0.0:3001}
-18:05:53.754 2019-07-23  INFO 8218 --- [           main] o.e.j.s.Server       : Started @34768ms
-18:10:20.882 2019-07-23  INFO 8414 --- [           main] o.e.j.u.log          : Logging initialized @21853ms to org.eclipse.jetty.util.log.Slf4jLog
-18:10:33.450 2019-07-23  INFO 8414 --- [           main] o.m.d.cluster        : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-18:10:33.523 2019-07-23  INFO 8414 --- [127.0.0.1:27017] o.m.d.connection     : Opened connection [connectionId{localValue:1, serverValue:6}] to 127.0.0.1:27017
-18:10:33.526 2019-07-23  INFO 8414 --- [127.0.0.1:27017] o.m.d.cluster        : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=804141}
-18:10:34.135 2019-07-23  INFO 8414 --- [           main] o.e.j.s.Server       : jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_211-b12
-18:10:34.177 2019-07-23  INFO 8414 --- [           main] .s.AbstractConnector : Started ServerConnector@607df2a0{HTTP/1.1,[http/1.1]}{0.0.0.0:3000}
-18:10:34.178 2019-07-23  INFO 8414 --- [           main] o.e.j.s.Server       : Started @35150ms
-18:14:03.954 2019-07-23  INFO 8609 --- [           main] o.e.j.u.log          : Logging initialized @21784ms to org.eclipse.jetty.util.log.Slf4jLog
-18:14:16.736 2019-07-23  INFO 8609 --- [           main] o.m.d.cluster        : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-18:14:16.807 2019-07-23  INFO 8609 --- [127.0.0.1:27017] o.m.d.connection     : Opened connection [connectionId{localValue:1, serverValue:7}] to 127.0.0.1:27017
-18:14:16.815 2019-07-23  INFO 8609 --- [127.0.0.1:27017] o.m.d.cluster        : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=3386937}
-18:14:17.367 2019-07-23  INFO 8609 --- [           main] o.e.j.s.Server       : jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_211-b12
-18:14:17.402 2019-07-23  INFO 8609 --- [           main] .s.AbstractConnector : Stopped ServerConnector@6b89b36d{HTTP/1.1,[http/1.1]}{0.0.0.0:3000}
-18:14:17.403 2019-07-23  INFO 8609 --- [           main] o.e.j.s.Server       : jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_211-b12
-18:14:17.423 2019-07-23  INFO 8609 --- [           main] .s.AbstractConnector : Started ServerConnector@3b181488{HTTP/1.1,[http/1.1]}{0.0.0.0:3001}
-18:14:17.424 2019-07-23  INFO 8609 --- [           main] o.e.j.s.Server       : Started @35255ms
-18:18:07.313 2019-07-23  INFO 8628 --- [           main] o.e.j.u.log          : Logging initialized @21797ms to org.eclipse.jetty.util.log.Slf4jLog
-18:18:19.726 2019-07-23  INFO 8628 --- [           main] o.m.d.cluster        : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-18:18:19.791 2019-07-23  INFO 8628 --- [127.0.0.1:27017] o.m.d.connection     : Opened connection [connectionId{localValue:1, serverValue:8}] to 127.0.0.1:27017
-18:18:19.793 2019-07-23  INFO 8628 --- [127.0.0.1:27017] o.m.d.cluster        : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=509410}
-18:19:13.778 2019-07-23  INFO 8645 --- [           main] o.e.j.u.log          : Logging initialized @21752ms to org.eclipse.jetty.util.log.Slf4jLog
-18:19:26.166 2019-07-23  INFO 8645 --- [           main] o.m.d.cluster        : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-18:19:26.232 2019-07-23  INFO 8645 --- [127.0.0.1:27017] o.m.d.connection     : Opened connection [connectionId{localValue:1, serverValue:9}] to 127.0.0.1:27017
-18:19:26.237 2019-07-23  INFO 8645 --- [127.0.0.1:27017] o.m.d.cluster        : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=1275796}
-18:20:42.783 2019-07-23  INFO 8663 --- [           main] o.e.j.u.log          : Logging initialized @21764ms to org.eclipse.jetty.util.log.Slf4jLog
-18:20:55.218 2019-07-23  INFO 8663 --- [           main] o.m.d.cluster        : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-18:20:55.282 2019-07-23  INFO 8663 --- [127.0.0.1:27017] o.m.d.connection     : Opened connection [connectionId{localValue:1, serverValue:10}] to 127.0.0.1:27017
-18:20:55.284 2019-07-23  INFO 8663 --- [127.0.0.1:27017] o.m.d.cluster        : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=556413}
-18:21:41.912 2019-07-23  INFO 8682 --- [           main] o.e.j.u.log          : Logging initialized @21769ms to org.eclipse.jetty.util.log.Slf4jLog
-18:21:56.895 2019-07-23  INFO 8682 --- [           main] o.m.d.cluster        : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-18:21:56.959 2019-07-23  INFO 8682 --- [127.0.0.1:27017] o.m.d.connection     : Opened connection [connectionId{localValue:1, serverValue:11}] to 127.0.0.1:27017
-18:21:56.962 2019-07-23  INFO 8682 --- [127.0.0.1:27017] o.m.d.cluster        : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=580435}
-18:23:26.818 2019-07-23  INFO 8704 --- [           main] o.e.j.u.log          : Logging initialized @21887ms to org.eclipse.jetty.util.log.Slf4jLog
-18:23:39.715 2019-07-23  INFO 8704 --- [           main] o.m.d.cluster        : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-18:23:39.782 2019-07-23  INFO 8704 --- [127.0.0.1:27017] o.m.d.connection     : Opened connection [connectionId{localValue:1, serverValue:12}] to 127.0.0.1:27017
-18:23:39.785 2019-07-23  INFO 8704 --- [127.0.0.1:27017] o.m.d.cluster        : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=505507}
-18:23:40.393 2019-07-23  INFO 8704 --- [           main] o.e.j.s.Server       : jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_211-b12
-18:23:40.429 2019-07-23  INFO 8704 --- [           main] .s.AbstractConnector : Stopped ServerConnector@5e2cddf4{HTTP/1.1,[http/1.1]}{0.0.0.0:3000}
-18:23:40.431 2019-07-23  INFO 8704 --- [           main] o.e.j.s.Server       : jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_211-b12
-18:23:40.451 2019-07-23  INFO 8704 --- [           main] .s.AbstractConnector : Started ServerConnector@43ae3c30{HTTP/1.1,[http/1.1]}{0.0.0.0:3001}
-18:23:40.451 2019-07-23  INFO 8704 --- [           main] o.e.j.s.Server       : Started @35522ms
-18:30:53.222 2019-07-23  INFO 8727 --- [           main] o.e.j.u.log          : Logging initialized @21818ms to org.eclipse.jetty.util.log.Slf4jLog
-18:31:06.193 2019-07-23  INFO 8727 --- [           main] o.m.d.cluster        : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-18:31:06.267 2019-07-23  INFO 8727 --- [127.0.0.1:27017] o.m.d.connection     : Opened connection [connectionId{localValue:1, serverValue:13}] to 127.0.0.1:27017
-18:31:06.270 2019-07-23  INFO 8727 --- [127.0.0.1:27017] o.m.d.cluster        : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=588914}
-18:31:06.988 2019-07-23  INFO 8727 --- [           main] o.e.j.s.Server       : jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_211-b12
-18:31:07.035 2019-07-23  INFO 8727 --- [           main] .s.AbstractConnector : Stopped ServerConnector@175a0f81{HTTP/1.1,[http/1.1]}{0.0.0.0:3000}
-18:31:07.037 2019-07-23  INFO 8727 --- [           main] o.e.j.s.Server       : jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_211-b12
-18:31:07.063 2019-07-23  INFO 8727 --- [           main] .s.AbstractConnector : Started ServerConnector@10b954f7{HTTP/1.1,[http/1.1]}{0.0.0.0:3001}
-18:31:07.064 2019-07-23  INFO 8727 --- [           main] o.e.j.s.Server       : Started @35661ms
-18:32:54.262 2019-07-23  INFO 8748 --- [           main] o.e.j.u.log          : Logging initialized @22112ms to org.eclipse.jetty.util.log.Slf4jLog
-18:33:07.366 2019-07-23  INFO 8748 --- [           main] o.m.d.cluster        : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-18:33:07.428 2019-07-23  INFO 8748 --- [127.0.0.1:27017] o.m.d.connection     : Opened connection [connectionId{localValue:1, serverValue:14}] to 127.0.0.1:27017
-18:33:07.431 2019-07-23  INFO 8748 --- [127.0.0.1:27017] o.m.d.cluster        : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=537256}
-18:33:08.056 2019-07-23  INFO 8748 --- [           main] o.e.j.s.Server       : jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_211-b12
-18:33:08.087 2019-07-23  INFO 8748 --- [           main] .s.AbstractConnector : Stopped ServerConnector@466eddc6{HTTP/1.1,[http/1.1]}{0.0.0.0:3000}
-18:33:08.088 2019-07-23  INFO 8748 --- [           main] o.e.j.s.Server       : jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_211-b12
-18:33:08.103 2019-07-23  INFO 8748 --- [           main] .s.AbstractConnector : Started ServerConnector@2e553a0f{HTTP/1.1,[http/1.1]}{0.0.0.0:3001}
-18:33:08.104 2019-07-23  INFO 8748 --- [           main] o.e.j.s.Server       : Started @35955ms
+10:38:37.362 2019-07-24  INFO 9773 --- [           main] o.e.j.u.log          : Logging initialized @22416ms to org.eclipse.jetty.util.log.Slf4jLog
+10:40:03.105 2019-07-24  INFO 9801 --- [           main] o.e.j.u.log          : Logging initialized @21790ms to org.eclipse.jetty.util.log.Slf4jLog
+10:42:36.854 2019-07-24  INFO 9833 --- [           main] o.e.j.u.log          : Logging initialized @21790ms to org.eclipse.jetty.util.log.Slf4jLog
+10:48:32.916 2019-07-24  INFO 9860 --- [           main] o.e.j.u.log          : Logging initialized @21772ms to org.eclipse.jetty.util.log.Slf4jLog
+10:52:58.376 2019-07-24  INFO 9930 --- [           main] o.e.j.u.log          : Logging initialized @1695ms to org.eclipse.jetty.util.log.Slf4jLog
+10:53:57.889 2019-07-24  INFO 9950 --- [           main] o.e.j.u.log          : Logging initialized @1673ms to org.eclipse.jetty.util.log.Slf4jLog
+10:55:57.151 2019-07-24  INFO 9965 --- [           main] o.e.j.u.log          : Logging initialized @21715ms to org.eclipse.jetty.util.log.Slf4jLog
+10:58:56.055 2019-07-24  INFO 10007 --- [           main] o.e.j.u.log          : Logging initialized @11222ms to org.eclipse.jetty.util.log.Slf4jLog
+11:05:00.510 2019-07-24  INFO 10029 --- [           main] o.e.j.u.log          : Logging initialized @21749ms to org.eclipse.jetty.util.log.Slf4jLog
+11:06:59.051 2019-07-24  INFO 10112 --- [           main] o.e.j.u.log          : Logging initialized @1864ms to org.eclipse.jetty.util.log.Slf4jLog
+11:26:55.214 2019-07-24  INFO 10559 --- [           main] o.m.d.cluster        : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+11:26:55.305 2019-07-24  INFO 10559 --- [127.0.0.1:27017] o.m.d.connection     : Opened connection [connectionId{localValue:1, serverValue:15}] to 127.0.0.1:27017
+11:26:55.310 2019-07-24  INFO 10559 --- [127.0.0.1:27017] o.m.d.cluster        : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2707956}
+11:26:55.762 2019-07-24  INFO 10559 --- [           main] o.e.j.u.log          : Logging initialized @34283ms to org.eclipse.jetty.util.log.Slf4jLog
+11:28:07.777 2019-07-24  INFO 10607 --- [           main] o.e.j.u.log          : Logging initialized @21720ms to org.eclipse.jetty.util.log.Slf4jLog
+11:28:19.844 2019-07-24  INFO 10607 --- [           main] o.m.d.cluster        : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+11:28:19.912 2019-07-24  INFO 10607 --- [127.0.0.1:27017] o.m.d.connection     : Opened connection [connectionId{localValue:1, serverValue:16}] to 127.0.0.1:27017
+11:28:19.918 2019-07-24  INFO 10607 --- [127.0.0.1:27017] o.m.d.cluster        : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2711004}
+11:28:20.899 2019-07-24  INFO 10607 --- [           main] o.e.j.s.Server       : jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_211-b12
+11:28:20.928 2019-07-24  INFO 10607 --- [           main] .s.AbstractConnector : Stopped ServerConnector@5d5181f2{HTTP/1.1,[http/1.1]}{0.0.0.0:3000}
+11:28:20.929 2019-07-24  INFO 10607 --- [           main] o.e.j.s.Server       : jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_211-b12
+11:28:20.944 2019-07-24  INFO 10607 --- [           main] .s.AbstractConnector : Started ServerConnector@4c47eb9b{HTTP/1.1,[http/1.1]}{0.0.0.0:3001}
+11:28:20.944 2019-07-24  INFO 10607 --- [           main] o.e.j.s.Server       : Started @34890ms

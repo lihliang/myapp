@@ -42,3 +42,35 @@
           :else
           (do (log/info "new order created, openid: " openid ", pid: " pid)
               (res/succResponse {:status "succeed"})))))
+
+(def users (atom {}))
+(let [ids (atom 0)]
+  (defn register! [id username pwd]
+    (let [idreal (or id (swap! ids inc))]
+      (if (nil? username)
+        (do
+          (log/error "Illegal username")
+          (res/failResponse {:errmsg "wrong update"}))
+        (do
+          (swap! users assoc idreal (assoc {} name pwd))
+          (log/info "Register succeed")
+          (res/succResponse {:name username :id idreal}))))))
+
+(defn login! [id name pwd]
+  (let [ishave (get @users id)]
+    (if (nil? ishave)
+      (do
+        (log/error "User is not exist")
+        (res/failResponse {:errmsg "User is not exist"}))
+      (do
+        (let [ispwd (map val ishave)]
+          (if (= (list pwd) ispwd)
+            (do
+              (log/info "login succeed")
+              (prn "Welcome!")
+              (res/succResponse {:message "login succeed"})
+              )
+            (do
+              (log/error "Wrong password")
+              (res/failResponse {:errmsg "password is not right"
+                                 :errcode  52100}))))))))
